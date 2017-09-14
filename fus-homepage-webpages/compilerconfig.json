@@ -1,0 +1,10 @@
+﻿[
+  {
+    "outputFile": "Content/materialize.css",
+    "inputFile": "Content/sass/materialize.scss"
+  },
+  {
+    "outputFile": "Content/style.css",
+    "inputFile": "Content/sass/style.scss"
+  }
+]

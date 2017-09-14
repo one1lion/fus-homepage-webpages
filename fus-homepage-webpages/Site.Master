@@ -1,0 +1,332 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="fus_homepage_webpages.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+  <meta charset="utf-8">
+  <meta name="description" content="A static html template for Franciscan University websites.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%: Page.Title %> - FUS Starter Template</title>
+
+  <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+</head>
+<body class="list-view">
+  <form runat="server">
+    <asp:ScriptManager runat="server">
+      <Scripts>
+        <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+        <%--Framework Scripts--%>
+        <asp:ScriptReference Name="MsAjaxBundle" />
+        <asp:ScriptReference Name="jquery" />
+        <asp:ScriptReference Name="bootstrap" />
+        <asp:ScriptReference Name="respond" />
+        <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+        <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+        <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+        <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+        <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+        <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+        <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+        <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+        <asp:ScriptReference Name="WebFormsBundle" />
+        <%--Site Scripts--%>
+      </Scripts>
+    </asp:ScriptManager>
+    <%--Header/Nav--%>
+    <header>
+      <div class="navbar-fixed">
+        <nav class="main-nav search-nav">
+          <div class="nav-wrapper">
+            <!-- <div class="container"> -->
+            <a href="#" class="brand-logo">
+              <img src="Content/img/side-nav-logo.jpg" /></a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse show-on-large">
+              <svg viewBox="0 0 24 24" fill="#21412a" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
+              </svg>
+            </a>
+            <div class="social hide-on-med-and-down">
+              <a class="facebook">
+                <svg viewBox="0 0 800 800">
+                  <path d="M445 643h-90V419h-75v-87h75v-64q0-55 32-86 30-29 80-29 28 0 67 3v78h-47q-42 0-42 38v60h86l-11 87h-75v224z"></path>
+                </svg>
+              </a>
+              <a class="twitter">
+                <svg viewBox="0 0 800 800">
+                  <path d="M679 239s-21 34-55 57c7 156-107 329-314 329-103 0-169-50-169-50s81 17 163-45c-83-5-103-77-103-77s23 6 50-2c-93-23-89-110-89-110s23 14 50 14c-84-65-34-148-34-148s76 107 228 116c-22-121 117-177 188-101 37-6 71-27 71-27s-12 41-49 61c30-2 63-17 63-17z"></path>
+                </svg>
+              </a>
+              <a class="google-plus">
+                <svg viewBox="0 0 800 800">
+                  <path d="M487 370c21 129-62 237-195 237-114 0-207-93-207-207s93-207 207-207c89 0 138 54 138 54l-56 54s-29-32-82-32c-71 0-128 59-128 131 0 73 57 131 128 131 81 0 113-58 117-90H292v-71h195zm189-59v59h59v60h-59v59h-59v-59h-59v-60h59v-59h59z"></path>
+                </svg>
+              </a>
+              <a class="linkedin">
+                <svg viewBox="0 0 800 800">
+                  <path d="M268 629h-97V319h97zm157 0h-97V319h93v42h1q31-50 93-50 114 0 114 133v185h-96V466q0-70-49-70-59 0-59 69z"></path>
+                  <circle cx="219" cy="220" r="56"></circle>
+                </svg>
+              </a>
+              <a class="instagram">
+                <svg viewBox="0 0 800 800">
+                  <path d="M150 400c0-119 0-166 42-208s88-42 208-42 166 0 208 42 42 89 42 208 0 166-42 208-88 42-208 42-166 0-208-42-42-89-42-208zm455 0c0-114 0-148-29-176-29-29-62-29-176-29s-148 0-176 29c-29 29-29 62-29 176s0 148 29 176c29 29 62 29 176 29s148 0 176-29c29-29 29-62 29-176zM400 272a128 128 0 1 1 0 256 128 128 0 0 1 0-256zm0 211c46 0 83-37 83-83s-37-83-83-83-83 37-83 83 37 83 83 83zm163-216c0 16-13 30-30 30-16 0-30-14-30-30 0-17 14-30 30-30 17 0 30 13 30 30z"></path>
+                </svg>
+              </a>
+              <a class="pinterest">
+                <svg viewBox="0 0 800 800">
+                  <path d="M287 681c-9-3-15-77-6-115l38-163s-9-20-9-49c0-46 26-80 59-80 28 0 42 21 42 46 0 28-19 71-28 110-8 33 17 59 49 59 58 0 104-61 104-150 0-79-57-134-138-134-94 0-148 69-148 142 0 28 9.7 57.4 23 74 4 5 5 6 2 17l-8 31s-2 9.5-14 3c-41-22.3-63-78-63-126 0-104 75-199 217-199 114 0 203 81 203 190 0 113-72 205-171 205-55 0-75-38-75-38l-21 78c-11 41-47 102-56 99z"></path>
+                </svg>
+              </a>
+              <a class="flickr">
+                <svg viewBox="0 0 800 800">
+                  <circle cx="234" cy="400" r="136" class="flickr-blue"></circle>
+                  <circle cx="566" cy="400" r="136" class="flickr-pink"></circle>
+                </svg>
+              </a>
+              <a class="snapchat">
+                <svg viewBox="0 0 800 800">
+                  <path d="M400 152c-23 0-98 6-133 83-14 30-7 82-5 122-14 14-38-3-48-3-20 0-39 21 1 36 21 8 55 16 39 49-2 3-36 79-112 94-10 2-9 25 63 34 8 1 6 35 17 35s23-5 42-5c65 0 68 50 136 50s71-50 136-50c19 0 31 5 42 5s9-34 17-35c72-9 73-32 63-34-76-15-110-91-112-94-16-33 18-41 39-49 40-15 21-36 1-36-10 0-34 17-48 3 2-40 9-92-5-122-35-77-110-83-133-83z"></path>
+                </svg>
+              </a>
+              <a class="youtube">
+                <svg viewBox="0 0 800 800">
+                  <path d="M400 224c144 0 201 2 224 25 17 17 26 52.125 26 151s-9 134-26 151c-23 23-80 25-224 25s-201-2-224-25c-17-17-26-52.125-26-151s9-134 26-151c23-23 80-25 224-25zm-52 100v141l135-70z"></path>
+                </svg>
+              </a>
+            </div>
+            <!--
+          Copyright (c) 2016 by Andreas Larsen (http://codepen.io/larsenwork/pen/admEZM)
+
+          Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+          The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+          THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+          -->
+            <div class="button btn hide-on-med-and-down">Donate</div>
+            <ul class="right hide-on-med-and-down top-nav-links">
+              <li><a id="about-link" href="#" title="Link One">About</a></li>
+              <li><a id="academics-link" href="#" title="Link Two">Academics</a></li>
+              <li><a id="admissions-link" href="#" title="Link Three">Admissions</a></li>
+              <li><a id="faith-and-life-link" href="#" title="Link Three">Faith and Life</a></li>
+              <li id="top-nav-search">
+                <div class="search-icon">
+                  <svg viewBox="0 0 24 24" class="imgSearch">
+                    <path xmlns="http://www.w3.org/2000/svg" d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" style="">
+                    </path>
+                    <path d="M0 0h24v24H0z" fill="none"></path>
+                  </svg>
+                </div>
+                <div id="search-input">
+                  <input name="ctl00$MainNav1$txbSearch" id="ctl00_MainNav1_txbSearch" class="txbSearch" type="search" placeholder="Search">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="#21412a" height="24" viewBox="0 0 24 24" width="24">
+                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
+                    <path d="M0 0h24v24H0z" fill="none"></path>
+                  </svg>
+                </div>
+              </li>
+            </ul>
+            <!-- </div> -->
+          </div>
+        </nav>
+      </div>
+      <div>
+        <ul class="side-nav" id="mobile-demo" style="width: 300px;">
+          <li class="logo">
+            <a id="logo-container" href="#" class="brand-logo">
+              <img src="Content/img/side-nav-logo.jpg">
+            </a>
+          </li>
+          <li>
+            <div class="search card">
+              <input name="ctl00$MainNav1$txbSearch" id="ctl00_MainNav1_txbSearch" class="txbSearch" type="search" placeholder="Search">
+              <div class="search-icon">
+                <svg viewBox="0 0 24 24" class="imgSearch">
+                  <path xmlns="http://www.w3.org/2000/svg" d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" style="">
+                  </path>
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                </svg>
+              </div>
+            </div>
+          </li>
+          <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+              <li>
+                <a class="collapsible-header">About</a>
+                <div class="collapsible-body">
+                  <ul>
+                    <li><a href="/about/academically-excellent/">Academically Excellent</a> </li>
+                    <li><a href="/about/passionately-catholic/">Passionately Catholic</a> </li>
+                    <li><a href="/about/at-a-glance">At A Glance</a> </li>
+                    <li><a href="/hr/">Employment &amp; HR</a> </li>
+                    <li><a href="/consumer-information/">Consumer Information</a> </li>
+                    <li><a href="https://franciscansquare.com/hotel">The Inn at Franciscan Square</a> </li>
+                    <li><a href="/about/vision-charisms/">Our Vision &amp; Charisms</a> </li>
+                    <li><a href="/about/mission-statement/">Our Mission Statement</a> </li>
+                    <li><a href="/chapel/franciscans-tor">Franciscans TOR</a> </li>
+                    <li><a href="/about/history/">Our History</a> </li>
+                    <li><a href="/fact-book/">Fact Book</a> </li>
+                    <li><a href="http://bookstore.franciscan.edu">Bookstore</a></li>
+                    <li><a href="/directions-and-attractions/">Directions</a></li>
+                    <li><a href="https://www.google.com/maps/d/viewer?mid=1VcE-IIqOQ8VTZPoYjt39avuUGKE">Map</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a class="collapsible-header">Academics</a>
+                <div class="collapsible-body">
+                  <ul>
+                    <li><a href="/academics/ug/majors/">Undergraduate</a> </li>
+                    <li><a href="/academics/graduate-programs/">Graduate</a> </li>
+                    <li><a href="/admissions/online">Online</a> </li>
+                    <li><a href="http://franciscan.smartcatalogiq.com/en/2016-2017/Undergraduate-Catalog">Undergraduate Catalog</a> </li>
+                    <li><a href="http://franciscan.smartcatalogiq.com/en/2016-2017/Graduate-Catalog">Graduate Catalog</a> </li>
+                    <li><a href="http://franciscan.smartcatalogiq.com/en/2016-2017/Student-Handbook">Student Handbook</a> </li>
+                    <li><a href="/core-curriculum/">Our Core Curriculum</a> </li>
+                    <li><a href="/institutes-centers/">Institutes &amp; Centers</a> </li>
+                    <li><a href="/departments/">Academic Departments</a> </li>
+                    <li><a href="/academic-affairs/leadership/">Academic Affairs</a> </li>
+                    <li><a href="/austria/">Austrian Semester</a> </li>
+                    <li><a href="/registrar/registration/">Registration</a> </li>
+                    <li><a href="http://libguides.franciscan.edu/friendly.php?action=82&amp;s=Welcome_to_the_JPII_Library">Library</a> </li>
+                    <li><a href="https://franciscan.blackboard.com/webapps/portal/frameset.jsp">Blackboard</a> </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a class="collapsible-header">Admissions</a>
+                <div class="collapsible-body">
+                  <ul>
+                    <li><a href="/admissions/undergraduate">Undergraduate</a> </li>
+                    <li><a href="/admissions/graduate/">Graduate</a> </li>
+                    <li><a href="/admissions/online">Online</a> </li>
+                    <li><a href="/savings-for-local-graduates">Local High School Students</a> </li>
+                    <li><a href="/admissions/undergraduate/requirements/transfer/">Transfer Students</a> </li>
+                    <li><a href="/admissions/undergraduate/requirements/international/">International Students</a> </li>
+                    <li><a href="/admissions/undergraduate/requirements/">Homeschool</a> </li>
+                    <li><a href="/admissions/undergraduate/requirements/">General Requirements</a> </li>
+                    <li><a href="/sfs/new/">Financial Aid</a> </li>
+                    <li><a href="/military-benefits/">Military Benefits Information</a> </li>
+                    <li><a href="https://jrm.targetx.com/orgs/00D36000000qTNpEAM/registration/step_1?utm_source=fus_site&amp;utm_medium=main_menu&amp;utm_term=Apply">APPLY</a> </li>
+                    <li><a href="https://franciscan.secure.force.com/form?formid=217756&amp;utm_source=fus_site&amp;utm_medium=main_menu&amp;utm_term=Request">Request Info</a> </li>
+                    <li><a href="https://franciscan.secure.force.com/events?utm_source=fus_site&amp;utm_medium=main_menu&amp;utm_term=Visit">Visit</a> </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a class="collapsible-header" data-url="faithSection">Faith &amp; Life</a>
+                <div class="collapsible-body">
+                  <ul>
+                    <li><a href="/chapel/">Chapel Ministries</a> </li>
+                    <li><a href="/households/">Households</a> </li>
+                    <li><a href="/pilgrimages/">Pilgrimages</a> </li>
+                    <li><a href="http://www.faithandreason.com/franciscan-university-presents/">Franciscan University Presents</a> </li>
+                    <li><a href="/franciscanmagazine/">Franciscan Magazine</a> </li>
+                    <li><a href="/missionary-outreach/">Missionary Outreach</a> </li>
+                  </ul>
+                  <ul>
+                    <li><a href="/year-of-mercy">2015-16 Theme: The Year of Mercy</a> </li>
+                    <li><a href="/pdp/">Priestly Discernment Program</a> </li>
+                    <li><a href="/veritas/">Veritas Center</a> </li>
+                    <li><a href="/fish/">Institute of Science and Health</a> </li>
+                    <li><a href="/fiwh">Institute for World Health</a> </li>
+                    <li><a href="/center-for-bioethics/">Center for Bioethics</a> </li>
+                    <li><a href="/fupress/">Franciscan University Press</a> </li>
+                    <li><a href="http://astraweb.franciscan.edu/AstraSchedule/Portal/GuestPortal.aspx">Calendar</a> </li>
+                    <li><a href="http://steubenvillefuel.com/e-spirations/">e-spirations</a> </li>
+                    <li><a href="/events/main/">Events</a> </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- </nav> -->
+    </header>
+    <%--End Header/Nav--%>
+
+    <%--Page Content--%>
+    <asp:ContentPlaceHolder ID="cphMainContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <%--End Page Content--%>
+
+    <%--Footer--%>
+    <footer class="page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col s12 m6 center">
+            <a href="http://www.franciscan.edu/" title="Franciscan University of Steubenville" target="_blank">
+              <img class="responsive-img" src="Content/img/vertical-fus-logo-white.svg" style="width: 135px;" /></a>
+          </div>
+          <div class="col s12 m6">
+            <h5 class="white-text light">Contact</h5>
+            <address>
+              <p class="white-text" translate="no" typeof="schema:PostalAddress">
+                <span property="schema:streetAddress">1235 University Boulevard</span><br>
+                <span property="schema:addressLocality">Steubenville</span>,
+                <abbr title="Ohio" property="schema:addressRegion">OH</abbr>
+                <span property="schema:postalCode">43952</span>
+                <abbr property="schema:addressCountry">USA</abbr><br />
+                <a href="tel:+17402833771" property="telephone" class="white-text">740.283.3771</a><br />
+                <a href="mailto:example@franciscan.edu" property="email" class="white-text">example@franciscan.edu
+                </a>
+              </p>
+            </address>
+            <div class="social">
+              <a href="http://www.facebook.com/franciscanuniversity" title="Franciscan University Facebook" target="_blank">
+                <svg viewBox="0 0 800 800">
+                  <path d="M445 643h-90V419h-75v-87h75v-64q0-55 32-86 30-29 80-29 28 0 67 3v78h-47q-42 0-42 38v60h86l-11 87h-75v224z"></path>
+                </svg>
+              </a>
+              <a href="http://www.twitter.com/franciscanu" title="Franciscan University Twitter" target="_blank">
+                <svg viewBox="0 0 800 800">
+                  <path d="M679 239s-21 34-55 57c7 156-107 329-314 329-103 0-169-50-169-50s81 17 163-45c-83-5-103-77-103-77s23 6 50-2c-93-23-89-110-89-110s23 14 50 14c-84-65-34-148-34-148s76 107 228 116c-22-121 117-177 188-101 37-6 71-27 71-27s-12 41-49 61c30-2 63-17 63-17z"></path>
+                </svg>
+              </a>
+              <a href="https://plus.google.com/+franciscanuniversity/posts" title="Franciscan University Google Plus" target="_blank">
+                <svg viewBox="0 0 800 800">
+                  <path d="M487 370c21 129-62 237-195 237-114 0-207-93-207-207s93-207 207-207c89 0 138 54 138 54l-56 54s-29-32-82-32c-71 0-128 59-128 131 0 73 57 131 128 131 81 0 113-58 117-90H292v-71h195zm189-59v59h59v60h-59v59h-59v-59h-59v-60h59v-59h59z"></path>
+                </svg>
+              </a>
+              <!--
+          Copyright (c) 2016 by Andreas Larsen (http://codepen.io/larsenwork/pen/admEZM)
+
+          Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+          The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+          THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+          -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          &copy; <span id="copyright-date">@DateTime.Now.Year</span> Franciscan University of Steubenville
+        </div>
+      </div>
+    </footer>
+    <%--End Footer--%>
+
+    <asp:PlaceHolder runat="server">
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--uncache-->
+      <!-- build:css Content/style.min.css -->
+      <webopt:BundleReference runat="server" Path="~/Content/css" />
+      <!-- endbuild -->
+      <!--enduncache-->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+      <%: Scripts.Render("~/bundles/app") %>
+      <!-- endbuild -->
+    </asp:PlaceHolder>
+  </form>
+
+</body>
+</html>
